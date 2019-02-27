@@ -32,8 +32,17 @@ public class WhiskyTrackerApplicationTests {
 	}
 
 	@Test
+	public void findWhiskiesOfACertainYear(){
+		List<Whisky> found = whiskyRepository.getWhiskyByYear(1995);
+	}
+
+	@Test
 	public void canFindDistilleryByRegion(){
 		List<Distillery> found = distilleryRepository.getDistilleryByRegion("Lowland");
 	}
 
+	@Test
+	public void canFindWhiskyFromDistilleryOfACertainAge(){
+		List<Whisky> found = whiskyRepository.findWhiskyOfACertainAgeFromDistillery(15, 1L);
+	}
 }
